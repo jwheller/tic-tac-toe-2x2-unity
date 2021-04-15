@@ -21,4 +21,12 @@ public class Tile : MonoBehaviour
         // Update to the next player in rotation
         tileManager.ChangePlayer();
     }
+
+    public void ResetTile()
+    {
+        owner = tileManager.CurrentPlayer;
+        if (owner == TileManager.Owner.None) //If the current player is "None" reset the tile to white
+            this.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
 }
